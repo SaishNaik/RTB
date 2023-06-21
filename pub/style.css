@@ -1,0 +1,22 @@
+.img-wrap {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    /*display: inline-block;*/
+    overflow: hidden;
+    margin: 0;
+}
+
+.new-div{
+    display: block;
+    position: absolute;
+    /*top: 50%;*/
+    /*left: 50%;*/
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+
+/*docker-compose exec -T db mongorestore --archive --gzip < dump.gz*/
+/*docker-compose exec -T db mongodump --archive --gzip --db rtb > dump.gz*/

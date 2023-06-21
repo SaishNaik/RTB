@@ -1,0 +1,14 @@
+{
+  "application": {
+    "name": "Subscription Service",
+    "port": "3000",
+    "env": "STAGE"
+  },
+  "gin_mode": "debug",
+  "mongo_db": {
+    "enabled": true,
+    "uri": "mongodb://db/rtb",
+    "timeout": 10
+  },
+  "ip2location_data_path":"./tpdata/IP2LOCATION-LITE-DB1.BIN"
+}

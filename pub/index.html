@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id = "maincontent">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </div>
+    <div class="admaru-ads" data-width=43 data-height=43 data-adtype="Banner" data-adslotid="6458c5c947743c1a71fa9f7b">
+    </div>
+</body>
+<script type="application/javascript">
+
+    //todo scope for improvement
+    // multiple ad slots can be sent in a single request to improve latency and bandwidth issues
+    function gatherDetails(elem){
+        console.log(elem.dataset)
+        let details = JSON.parse(JSON.stringify(elem.dataset))
+        console.log(details);
+        return details;
+    }
+    async function callSSP(details){
+        const url = "http://localhost:3000/ad";
+        let options = {
+            method:"POST",
+            body: JSON.stringify(details),
+            headers: {
+                "Content-type": "application/json"
+            }
+        };
+
+        const response = await fetch(url,options);
+        const markup = await response.text();
+        return markup
+    }
+    async function showAds(){
+        let adslots = document.getElementsByClassName("admaru-ads");
+        for(let slot of adslots){
+            let details = gatherDetails(slot);
+            let adMarkup = await callSSP(details);
+            slot.innerHTML = adMarkup;
+        }
+    }
+    showAds()
+</script>
+</html>
+
+

@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongodata:/data/db"
+  ssp:
+    build: ssp/.
+    ports:
+    - "3000:3000"
+    depends_on:
+      - db
+  dsp:
+    build: dsp/.
+    ports:
+      - "3002:3002"
+  pub:
+    build: pub/.
+    ports:
+      - "3001:3001"
+volumes:
+  mongodata:
+
