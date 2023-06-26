@@ -5,7 +5,7 @@ Real-time bidding ( RTB) is a subcategory of programmatic media buying. It refer
 **Project Details:**
 Only SSP component implemented, all of the other services are dummy data providers
 
-To start the services,
+**To start the services,**
 
 1.Run from the root folder of project, below commands 
 
