@@ -1,3 +1,10 @@
+**Real Time Bidding**
+
+Real-time bidding ( RTB) is a subcategory of programmatic media buying. It refers to the practice of buying and selling ads in real time on a per-impression basis in an instant auction. This is usually facilitated by a supply-side platform (SSP) or an ad exchange. 
+
+**Project Details:**
+Only SSP component implemented, all of the other services are dummy data providers
+
 To start the services,
 
 1.Run from the root folder of project, below commands 
