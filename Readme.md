@@ -30,7 +30,7 @@ Pub will have a div `<div class="admaru-ads" data-width=43 data-height=43 data-a
 We go through all data params of div tag and compose a ad request and send to ssp
 
 
-SSP details:
+**SSP details:**
 
 1.SSP will validate the params sent and create a bid request. Bidrequest will be created using adslot data such as site etc. We will find country
 using ip2location and os from useragent. Device information can be got from publisher using data-attributes(not implemented currently)
@@ -50,10 +50,10 @@ we update the profit and revenue and impression in db.
 receive the impression url. Also some ads can be clickable and that can be saved as well on our end, but that was not
 the scope here.
 
-Dsp Service:
+**Dsp Service:**
 Just set 2 routes for dsp1 and dsp2, which return bid responses
 
-Mongo:
+**Mongo:**
 just a normal container. Also I have persisted the data as a volume
 
 
